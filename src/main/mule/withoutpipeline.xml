@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b445d695-7c32-47fd-ab36-6966c71b5ca0" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="withoutpipelineFlow" doc:id="717d09a1-3b16-46ab-b8fe-e7a57fdec3e5" >
+		<http:listener doc:name="Listener" doc:id="9ff15977-7ccd-4907-8113-718ff7db1021" config-ref="HTTP_Listener_config" path="/demo"/>
+		<set-variable value="this is demo " doc:name="Set Variable" doc:id="845d82bf-bd43-4765-b769-810769f7efb6" variableName="hello"/>
+	</flow>
+</mule>
